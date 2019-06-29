@@ -1,0 +1,25 @@
+Products\Domain\Model\Product\Product:
+  type: entity
+  table: product
+  id:
+    id:
+      type: integer
+      length: 10
+      id: true
+      generator:
+        strategy: AUTO
+      options:
+        unsigned: true
+  fields:
+      name:
+        type: string
+        column: name
+        length: 250
+        nullable: false
+
+      price:
+        type: decimal
+        column: price
+        precision: 13
+        scale: 4
+        nullable: false
