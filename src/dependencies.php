@@ -14,6 +14,7 @@ use Products\Application\ErrorHandler;
 use Products\Domain\Model\Product\ProductRepository;
 use Products\Infrastructure\Service\JsonTransformer;
 use Products\Infrastructure\Domain\Model\Product\DoctrineMysqlProductRepository;
+use Products\Domain\Model\Product\ProductConfiguration;
 
 $container = [];
 $container['settings'] = [
@@ -36,8 +37,16 @@ $container['settings'] = [
         'user' => getenv('DB_USERNAME'),
         'password' => getenv('DB_PASSWORD'),
         'dbname' => getenv('DB_NAME'),
-    ]
+    ],
+    'dollarValue' => getenv('DOLLAR_VALUE')
 ];
+
+$container[ProductConfiguration::class] = function ($c) {
+    $settings = $c->get('settings');
+    return new ProductConfiguration(
+        (float) $settings['dollarValue']
+    );
+};
 
 $container['errorHandler'] = function ($c) {
     return new ErrorHandler($c->get('logger'), $c->get('settings')['displayErrorDetails']);
