@@ -18,7 +18,7 @@ class ProductListTransformer extends TransformerAbstract
             'id' => $product->getId(),
             'name' => $product->getName(),
             'price' => $product->getPrice(),
-            'dollar_price' => $product->getDollarPrice()
+            'dollarPrice' => $product->getDollarPrice()
         ];
     }
 }
