@@ -67,6 +67,7 @@ class ProductListServiceTest extends \PHPUnit_Framework_TestCase
 
         $manager = new Manager();
         $manager->setSerializer(new DataArraySerializer());
+
         $productListService = new ProductListService($mockProductRepository, $mockProductConfiguration, new JsonTransformer($manager));
 
         $this->assertSame('Sugar', $productListService->execute()[0]['name']);
