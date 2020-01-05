@@ -2,20 +2,14 @@
 
 ## Task BACK
 
-Hacer una mini api rest de productos que controle alta baja y modificacion desde URL's
+You must make a very basic CRUD API for products.
 
-La base de datos debe ser MYSQL
+Database must be Mysql.
 
-El codigo debe ser con php. La idea es hacerlo lo mas rapido / simple posible. No importa si se usa framework o cual, siempre y cuando el back sea en php
+Fields: id, product name, price in Argentine pesos.
+You must do money conversion with dollar, but it can be hardcoded.
 
-Lo mas “rapido” posible orienta a ver que es lo que te resulta mas agil a vos, no se tiene en cuenta el tiempo de este ejercicio.
-
-Los datos que va a manejar son id, nombre producto, precio en pesos.
-
-Para cuando se muestran los datos, se debe usar una clase a la que se le pasen los valores de la tabla y una nueva variable con la cotizacion del dolar.
-NOTA: La variable del dolar se setea a mano en algun archivo, no es necesario ir a buscarlo.
-
-La idea es que esta clase formatee el resultado, entregando precio en pesos y precio en dolares
+You need to resposne, pesos and dollar price for each product:
 
 #### Response fields:
 ```
